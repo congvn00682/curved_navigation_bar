@@ -15,30 +15,32 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        extendBody: true,
+        backgroundColor: Colors.transparent,
         bottomNavigationBar: CurvedNavigationBar(
           key: _bottomNavigationKey,
-          index: 0,
-          items: <Widget>[
-            Icon(Icons.add, size: 30),
-            Icon(Icons.list, size: 30),
-            Icon(Icons.compare_arrows, size: 30),
-            Icon(Icons.call_split, size: 30),
-            Icon(Icons.perm_identity, size: 30),
+          height: 125,
+          index: 2,
+          textCenter: 'Đèn Taplo',
+          items: <CurveItem>[
+            CurveItem(icon: Icons.add.toString(), iconSelected: Icons.add.toString(), title: 'Trang chủ'),
+            CurveItem(icon: Icons.add.toString(), iconSelected: Icons.add.toString(), title: 'Trang chủ'),
+            CurveItem(
+              icon: "assets/icons/info.png",
+              iconSelected: "assets/icons/info.png",
+            ),
+            CurveItem(icon: Icons.add.toString(), iconSelected: Icons.add.toString(), title: 'Trang chủ'),
+            CurveItem(icon: Icons.add.toString(), iconSelected: Icons.add.toString(), title: 'Trang chủ'),
           ],
           color: Colors.white,
-          buttonBackgroundColor: Colors.white,
-          backgroundColor: Colors.blueAccent,
-          animationCurve: Curves.easeInOut,
-          animationDuration: Duration(milliseconds: 600),
+          backgroundColor: Colors.transparent,
           onTap: (index) {
             setState(() {
               _page = index;
             });
           },
-          letIndexChange: (index) => true,
         ),
-        body: Container(
-          color: Colors.blueAccent,
+        body: SingleChildScrollView(
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -47,11 +49,27 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 ElevatedButton(
                   child: Text('Go To Page of index 1'),
                   onPressed: () {
-                    final CurvedNavigationBarState? navBarState =
-                        _bottomNavigationKey.currentState;
+                    final CurvedNavigationBarState? navBarState = _bottomNavigationKey.currentState;
                     navBarState?.setPage(1);
                   },
-                )
+                ),
+                ListView.separated(
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: 20,
+                  padding: EdgeInsets.zero,
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      color: Colors.red,
+                      height: 50,
+                      child: Text("$index"),
+                    );
+                  },
+                  separatorBuilder: (BuildContext context, int index) {
+                    return SizedBox(height: 10);
+                  },
+                ),
+                SizedBox(height: 125),
               ],
             ),
           ),

@@ -23,14 +23,14 @@ class _BottomNavBarState extends State<BottomNavBar> {
           index: 2,
           textCenter: 'Đèn Taplo',
           items: <CurveItem>[
-            CurveItem(icon: Icons.add.toString(), iconSelected: Icons.add.toString(), title: 'Trang chủ'),
-            CurveItem(icon: Icons.add.toString(), iconSelected: Icons.add.toString(), title: 'Trang chủ'),
+            CurveItem(icon: "assets/icons/info.png", iconSelected: Icons.add.toString(), title: 'Trang chủ'),
+            CurveItem(icon: "assets/icons/info.png", iconSelected: Icons.add.toString(), title: 'Trang chủ'),
             CurveItem(
               icon: "assets/icons/info.png",
               iconSelected: "assets/icons/info.png",
             ),
-            CurveItem(icon: Icons.add.toString(), iconSelected: Icons.add.toString(), title: 'Trang chủ'),
-            CurveItem(icon: Icons.add.toString(), iconSelected: Icons.add.toString(), title: 'Trang chủ'),
+            CurveItem(icon: "assets/icons/info.png", iconSelected: Icons.add.toString(), title: 'Trang chủ'),
+            CurveItem(icon: "assets/icons/info.png", iconSelected: Icons.add.toString(), title: 'Trang chủ'),
           ],
           color: Colors.white,
           backgroundColor: Colors.transparent,

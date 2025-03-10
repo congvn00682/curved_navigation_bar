@@ -39,7 +39,7 @@ class NavButton extends StatelessWidget {
         },
         child: Container(
           height: 90,
-          padding: EdgeInsets.only(top: 14),
+          padding: EdgeInsets.only(top: 10),
           child: Transform.translate(
             offset: Offset(0, difference < 1.0 / length ? verticalAlignment * -8 : 0),
             child: Opacity(
@@ -61,7 +61,6 @@ class NavButton extends StatelessWidget {
                           width: 24,
                           height: 24,
                         ),
-                        const SizedBox(height: 4),
                         Text(
                           item.title ?? '',
                           style: TextStyle(fontSize: 10, fontWeight: FontWeight.w400, color: isSelected! ? active : inActive),
